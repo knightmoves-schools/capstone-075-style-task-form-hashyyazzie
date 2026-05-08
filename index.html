@@ -5,7 +5,58 @@
     <title>Task App</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        
+        /* Shared layout for both the form and the task list */
+        .row, .task-form-row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Gray underline for the task list rows */
+        .row {
+            border-bottom: 1px solid gray;
+            padding: 5px 0;
+        }
+
+        /* 90% Column: Description and Input Field */
+        .task-description, .task-form-left {
+            flex-basis: 90%;
+            padding: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't break the 90% width */
+        }
+
+        /* 10% Column: Status, Dropdown, and Add Button */
+        .task-status, .task-form-right {
+            flex-basis: 10%;
+            min-width: 4em;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Input and Dropdown styling to fill their containers */
+        input#task-description, select#task-status, button {
+            width: 100%;
+        }
+
+        /* Task Status Bubble Styling */
+        .task-status {
+            height: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Background Colors */
+        .todo { background-color: red; }
+        .doing { background-color: yellow; }
+        .done { background-color: green; }
+
+        /* Form Row Spacing */
+        #task-form {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -24,6 +75,7 @@
             <button class="task-form-right" type="submit">Add</button>
         </div>
     </form>
+
     <div id="tasks">
         <div id="task-row-1" class="row">
             <div id="task-description-1" class="task-description">pack spikes for track meet</div>
